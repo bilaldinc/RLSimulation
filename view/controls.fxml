@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="750.0" prefWidth="250.0" stylesheets="@controls.css" tabClosingPolicy="UNAVAILABLE" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1">
+      <tabs>
+          <Tab text="Environment">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+               <children>
+                  <Label layoutX="83.0" layoutY="14.0" text="Map Size" />
+                  <ChoiceBox layoutX="14.0" layoutY="38.0" prefHeight="26.0" prefWidth="210.0" />
+                  <Button layoutX="14.0" layoutY="76.0" mnemonicParsing="false" onAction="#addAgent" prefHeight="26.0" prefWidth="97.0" text="Add Agent" />
+                  <Button layoutX="14.0" layoutY="114.0" mnemonicParsing="false" onAction="#addGoal" prefHeight="26.0" prefWidth="98.0" text="Add Goal" />
+                  <Spinner fx:id="yAxis" layoutX="140.0" layoutY="114.0" prefHeight="26.0" prefWidth="83.0" />
+                  <Label layoutX="120.0" layoutY="81.0" text="X" />
+                  <Label layoutX="121.0" layoutY="119.0" text="Y" />
+                  <Spinner layoutX="140.0" layoutY="76.0" prefHeight="26.0" prefWidth="83.0" fx:id="xAxis" />
+                  <Button layoutX="14.0" layoutY="156.0" mnemonicParsing="false" onAction="#remove" prefHeight="26.0" prefWidth="98.0" text="Remove" />
+               </children>
+            </AnchorPane>
+              </content>
+          </Tab>
+          <Tab text="Simulation">
+              <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="439.0" prefWidth="248.0">
+                      <children>
+                          <Button layoutX="30.0" layoutY="27.0" mnemonicParsing="false" onAction="#play" prefHeight="25.0" prefWidth="46.0" text="Play" />
+                          <Button fx:id="pause" layoutX="95.0" layoutY="27.0" mnemonicParsing="false" onAction="#pause" prefHeight="25.0" prefWidth="60.0" text="Pause" />
+                          <Slider fx:id="speed" layoutX="31.0" layoutY="65.0" max="1000.0" min="10.0" prefHeight="16.0" prefWidth="194.0" value="500.0" />
+                          <Button fx:id="stop" layoutX="177.0" layoutY="27.0" mnemonicParsing="false" onAction="#stop" prefHeight="25.0" prefWidth="48.0" text="Stop" />
+                          <Button fx:id="trainButton" layoutX="102.0" layoutY="107.0" mnemonicParsing="false" onAction="#train" text="Train" />
+                          <ProgressIndicator fx:id="progress" layoutX="177.0" layoutY="97.0" progress="0.0" />
+                          <TextField fx:id="trainInput" layoutX="31.0" layoutY="107.0" prefHeight="25.0" prefWidth="51.0" promptText="100" text="100" />
+                  <Button layoutX="19.0" layoutY="294.0" mnemonicParsing="false" onAction="#learn" prefHeight="56.0" prefWidth="129.0" text="Learn" />
+                  <Spinner fx:id="stddev" layoutX="159.0" layoutY="294.0" prefHeight="10.0" prefWidth="73.0" />
+                  <Spinner fx:id="kstep" layoutX="159.0" layoutY="326.0" prefHeight="26.0" prefWidth="73.0" />
+                  <Label layoutX="23.0" layoutY="370.0" prefHeight="16.0" prefWidth="45.0" text="Alpha" />
+                  <Label layoutX="98.0" layoutY="370.0" text="Gamma" />
+                  <Label layoutX="175.0" layoutY="370.0" prefHeight="16.0" prefWidth="55.0" text="Epsilon" />
+                  <Spinner fx:id="alpha" layoutX="8.0" layoutY="396.0" prefHeight="26.0" prefWidth="84.0" />
+                  <Spinner fx:id="Gamma" layoutX="92.0" layoutY="396.0" prefHeight="26.0" prefWidth="76.0" />
+                  <Spinner fx:id="Epsilon" layoutX="168.0" layoutY="396.0" prefHeight="26.0" prefWidth="78.0" />
+                  <CheckBox layoutX="8.0" layoutY="445.0" mnemonicParsing="false" text="Dynamic Epsilon" />
+                  <Spinner disable="true" editable="true" layoutX="8.0" layoutY="486.0" prefHeight="26.0" prefWidth="69.0" />
+                  <Spinner disable="true" editable="true" layoutX="90.0" layoutY="486.0" prefHeight="26.0" prefWidth="69.0" />
+                  <Spinner disable="true" editable="true" layoutX="169.0" layoutY="486.0" prefHeight="26.0" prefWidth="69.0" />
+                  <Label layoutX="26.0" layoutY="468.0" text="Start" />
+                  <Label layoutX="107.0" layoutY="468.0" text="End" />
+                  <Label layoutX="172.0" layoutY="468.0" text="Episodes" />
+                  <CheckBox layoutX="5.0" layoutY="590.0" mnemonicParsing="false" text="Softmax" />
+                  <Spinner disable="true" layoutX="168.0" layoutY="608.0" prefHeight="26.0" prefWidth="69.0" />
+                  <Label layoutX="150.0" layoutY="590.0" text="Temperature" />
+                  <Label layoutX="102.0" layoutY="526.0" text="InitialQ" />
+                  <Label layoutX="15.0" layoutY="526.0" text="Rewards" />
+                  <Label layoutX="163.0" layoutY="526.0" text="Punishments" />
+                  <Spinner fx:id="Rewards" layoutX="9.0" layoutY="550.0" prefHeight="26.0" prefWidth="69.0" />
+                  <Spinner fx:id="InitialQ" layoutX="92.0" layoutY="550.0" prefHeight="26.0" prefWidth="69.0" />
+                  <Spinner fx:id="Punishments" layoutX="168.0" layoutY="550.0" prefHeight="26.0" prefWidth="69.0" />
+                  <Button fx:id="policy" layoutX="10.0" layoutY="675.0" mnemonicParsing="false" onAction="#showArrow" prefHeight="26.0" prefWidth="102.0" text="Show Policy" />
+                  <Button layoutX="130.0" layoutY="675.0" mnemonicParsing="false" onAction="#restart" prefHeight="26.0" prefWidth="108.0" text="Restart" />
+                  <Button fx:id="policy1" layoutX="10.0" layoutY="645.0" mnemonicParsing="false" onAction="#showq" prefHeight="26.0" prefWidth="102.0" text="Show Q" />
+                  <ListView fx:id="list1" layoutX="22.0" layoutY="155.0" prefHeight="130.0" prefWidth="103.0" />
+                  <ListView fx:id="list2" layoutX="130.0" layoutY="155.0" prefHeight="130.0" prefWidth="101.0" />
+                  <Button layoutX="130.0" layoutY="645.0" mnemonicParsing="false" onAction="#showq2" prefHeight="26.0" prefWidth="107.0" text="Show Q2" />
+                      </children>
+                  </AnchorPane>
+              </content>
+          </Tab>
+      </tabs>
+      <opaqueInsets>
+          <Insets />
+      </opaqueInsets>
+  </TabPane>

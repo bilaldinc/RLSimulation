@@ -1,0 +1,22 @@
+.tab-pane:top {
+    -fx-border-radius: 20px;
+    -fx-background-radius: 20px;
+    -fx-background-color: GAINSBORO;
+    -fx-border-style: solid;
+}
+
+.tab-pane:top .tab-header-area .tab-header-background {
+    -fx-border-radius: 20 20 0 0;
+    -fx-background-radius: 20 20 0 0;
+}
+
+.tab-pane:top .tab-header-area .headers-region .tab:top {
+    -fx-border-radius: 20 20 0 0;
+    -fx-background-radius: 20 20 0 0;
+}
+
+
+.tab:top {
+     -fx-focus-color: transparent ;
+     -fx-faint-focus-color: transparent ;
+}
